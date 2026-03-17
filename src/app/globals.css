@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
+@layer base {
 body {
   @apply bg-slate-900 text-white antialiased;
-  
+
   /* Touch optimization: boton text label unable to select  */
-  touch-action: manipulation;
-  overflow-x: hidden;
-}
+  user-select: none;
+
+  -webkit-user-select: none; /* Safari/iOS */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+
+   /* No secondary menu options */
+  -webkit-touch-callout: none;
+
+   /* No zoom */
+  touch-action: pan-y pinch-zoom;
+
+
+}}
 
 /* Volume bar transition fluid. */
 .transition-all {
